@@ -5,47 +5,217 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>AI Hub 更新公告</title>
 <style>
-  :root {
-    --ink0: #0b0d12;
-    --text-hi: #e9eef7;
-    --text-mid: #b9c2d4;
-    --text-lo: #6b7488;
-    --line: #262d3c;
-    --accent: #6c8cff;
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    padding: 26px 22px 40px;
-    background: var(--ink0);
-    color: var(--text-hi);
-    font: 15px/1.75 -apple-system, system-ui, "Segoe UI", Roboto, sans-serif;
-    -webkit-text-size-adjust: 100%;
-  }
-  h1 {
-    font-size: 19px;
-    font-weight: 600;
-    margin: 0 0 20px;
-    letter-spacing: .3px;
-  }
-  p { color: var(--text-mid); margin: 0 0 14px; }
-  hr {
-    border: 0;
-    border-top: 1px solid var(--line);
-    margin: 24px 0 16px;
-  }
-  .meta { color: var(--text-lo); font-size: 12px; margin: 0; }
-  a { color: var(--accent); }
+:root {
+  --ink0: #0b0d12;
+  --ink1: #12151d;
+  --ink2: #181c26;
+  --line: #2a3142;
+  --accent: #6c8cff;
+  --mint: #31d0aa;
+  --amber: #f5b347;
+  --rose: #f0616d;
+  --vd: #b07cff;
+  --hi: #e9eef7;
+  --mid: #b9c2d4;
+  --lo: #6b7488;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--ink0);
+  color: var(--hi);
+  font: 15px/1.75 -apple-system, system-ui, "Segoe UI", Roboto, sans-serif;
+  padding: 24px 20px 48px;
+}
+h1 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+h1::before { content: "📢"; font-size: 18px; }
+h2 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent);
+  margin: 20px 0 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+h2::before {
+  content: "";
+  width: 3px;
+  height: 14px;
+  background: var(--accent);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+.entry {
+  background: var(--ink1);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-bottom: 14px;
+}
+.badge-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+.tag {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+.tag-new   { background: #1a3a1a; color: var(--mint); }
+.tag-fix   { background: #2a2a0a; color: var(--amber); }
+.tag-hot   { background: #2a1a1a; color: var(--rose); }
+.tag-vd    { background: #1e1a3a; color: var(--vd); }
+p { color: var(--mid); margin: 0 0 10px; }
+p:last-child { margin-bottom: 0; }
+ul { padding-left: 18px; color: var(--mid); }
+li { margin: 6px 0; }
+code {
+  background: #1a1e2a;
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  font-size: 13px;
+  color: var(--accent);
+}
+hr {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 24px 0 16px;
+}
+.meta { color: var(--lo); font-size: 12px; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* 功能卡片 */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  margin: 16px 0;
+}
+.feature {
+  background: var(--ink2);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 12px;
+}
+.feature-icon { font-size: 20px; margin-bottom: 6px; }
+.feature-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--hi);
+  margin-bottom: 4px;
+}
+.feature-desc {
+  font-size: 12px;
+  color: var(--lo);
+  line-height: 1.5;
+}
+footer {
+  text-align: center;
+  color: var(--lo);
+  font-size: 12px;
+  margin-top: 32px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
 </style>
 </head>
 <body>
 
 <h1>AI Hub 更新公告</h1>
 
-<p>测试</p>
+<div class="entry">
+  <div class="badge-row">
+    <span class="tag tag-hot">v1.0.0</span>
+    <span class="tag tag-new">正式版</span>
+  </div>
+  <p>AI Hub 是一款专为 Android 打造的 AI 助手工具。内置完整开发环境，让 AI 能在你手机上真正干活——自动操作 App、读写文件、运行终端命令，同时不干扰你正在玩的游戏。</p>
+</div>
 
-<hr>
-<p class="meta">最后更新：2026-10-19</p>
+<h2>核心功能</h2>
+<div class="features">
+  <div class="feature">
+    <div class="feature-icon">🤖</div>
+    <div class="feature-title">AI 自动操作</div>
+    <div class="feature-desc">Shizuku 驱动，替你点击屏幕、打开 App、输入文字，解放双手</div>
+  </div>
+  <div class="feature">
+    <div class="feature-icon">🖥️</div>
+    <div class="feature-title">副屏模式</div>
+    <div class="feature-desc">虚拟显示器让 AI 在后台操作，你的游戏/视频不受影响</div>
+  </div>
+  <div class="feature">
+    <div class="feature-icon">🐚</div>
+    <div class="feature-title">内置终端</div>
+    <div class="feature-desc">Alpine Linux 沙箱，Python / Git / Node.js / GCC 开箱即用</div>
+  </div>
+  <div class="feature">
+    <div class="feature-icon">📋</div>
+    <div class="feature-title">文件管理</div>
+    <div class="feature-desc">读写手机文件、截图、安装卸载 App，一站式搞定</div>
+  </div>
+  <div class="feature">
+    <div class="feature-icon">🌐</div>
+    <div class="feature-title">联网搜索</div>
+    <div class="feature-desc">内置搜索引擎，AI 可实时获取最新信息回答问题</div>
+  </div>
+  <div class="feature">
+    <div class="feature-icon">🔌</div>
+    <div class="feature-title">MCP 工具链</div>
+    <div class="feature-desc">兼容 Claude Desktop 配置，接入海量第三方工具生态</div>
+  </div>
+</div>
+
+<h2>最近更新</h2>
+<div class="entry">
+  <div class="badge-row">
+    <span class="tag tag-new">新增</span>
+    <span class="tag tag-fix">优化</span>
+  </div>
+  <ul>
+    <li>✅ 新增公告入口，重要动态第一时间看到</li>
+    <li>✅ 新增 MCP 客户端，支持 STDIO / HTTP 两种协议</li>
+    <li>✅ 新增后台 Agent 保活舱，游戏时 AI 也能在后台运行</li>
+    <li>✅ 新增 VirtualDisplay 能力探测，智能选择最合适的操作方式</li>
+    <li>✅ 修复部分机型 WebView 跨域问题</li>
+    <li>✅ 修复 Release 包签名校验误判</li>
+    <li>✅ 开屏动画改为数学公式曲面 → 坍缩 → 围成图标</li>
+  </ul>
+</div>
+
+<h2>快速上手</h2>
+<div class="entry">
+  <div class="badge-row">
+    <span class="tag tag-vd">提示</span>
+  </div>
+  <p><strong>第一步：</strong>进入设置 → 添加你的 AI 模型提供商（支持 OpenAI / Claude / DeepSeek / 本地模型）</p>
+  <p><strong>第二步：</strong>在对话中直接下达指令，例如：</p>
+  <ul>
+    <li>「帮我下载这个网页到 Documents」</li>
+    <li>「打开微信，找到某人发个消息」</li>
+    <li>「分析这个 CSV 文件并生成图表」</li>
+  </ul>
+  <p><strong>第三步：</strong>开启副屏模式，AI 会在后台自动操作，不影响你当前使用</p>
+</div>
+
+<h2>关于</h2>
+<div class="entry">
+  <p>
+    作者：lyc
+  </p>
+  <p class="meta" style="margin-top:8px;">最后更新：2026-10-20 &nbsp;·&nbsp; 版本 v1.0.0</p>
+</div>
+
+<footer>
+  AI Hub &copy; 2026 &nbsp;·&nbsp; Built for Android
+</footer>
 
 </body>
 </html>
+
