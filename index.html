@@ -6,212 +6,138 @@
 <title>AI Hub 更新公告</title>
 <style>
 :root {
-  --ink0: #0b0d12;
-  --ink1: #12151d;
-  --ink2: #181c26;
-  --line: #2a3142;
-  --accent: #6c8cff;
-  --mint: #31d0aa;
-  --amber: #f5b347;
-  --rose: #f0616d;
-  --vd: #b07cff;
-  --hi: #e9eef7;
-  --mid: #b9c2d4;
-  --lo: #6b7488;
+  --ink0:#0b0d12; --ink1:#12151d; --ink2:#181c26; --line:#2a3142;
+  --accent:#6c8cff; --mint:#31d0aa; --amber:#f5b347; --rose:#f0616d;
+  --vd:#b07cff; --hi:#e9eef7; --mid:#b9c2d4; --lo:#6b7488;
 }
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body {
-  background: var(--ink0);
-  color: var(--hi);
-  font: 15px/1.75 -apple-system, system-ui, "Segoe UI", Roboto, sans-serif;
-  padding: 24px 20px 48px;
+*{box-sizing:border-box;margin:0;padding:0;}
+html,body{overscroll-behavior-y:contain;-webkit-text-size-adjust:100%;}
+body{
+  background:var(--ink0);color:var(--hi);
+  font:15px/1.75 -apple-system,system-ui,"Segoe UI",Roboto,sans-serif;
+  padding:24px 20px 48px;min-height:100%;touch-action:pan-y;overflow-x:hidden;
 }
-h1 {
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 24px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-h1::before { content: "📢"; font-size: 18px; }
-h2 {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--accent);
-  margin: 20px 0 10px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-h2::before {
-  content: "";
-  width: 3px;
-  height: 14px;
-  background: var(--accent);
-  border-radius: 2px;
-  flex-shrink: 0;
-}
-.entry {
-  background: var(--ink1);
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  padding: 14px 16px;
-  margin-bottom: 14px;
-}
-.badge-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
-.tag {
-  font-size: 11px;
-  padding: 2px 8px;
-  border-radius: 20px;
-  font-weight: 600;
-}
-.tag-new   { background: #1a3a1a; color: var(--mint); }
-.tag-fix   { background: #2a2a0a; color: var(--amber); }
-.tag-hot   { background: #2a1a1a; color: var(--rose); }
-.tag-vd    { background: #1e1a3a; color: var(--vd); }
-p { color: var(--mid); margin: 0 0 10px; }
-p:last-child { margin-bottom: 0; }
-ul { padding-left: 18px; color: var(--mid); }
-li { margin: 6px 0; }
-code {
-  background: #1a1e2a;
-  padding: 1px 6px;
-  border-radius: 4px;
-  font-family: "JetBrains Mono", "Fira Code", monospace;
-  font-size: 13px;
-  color: var(--accent);
-}
-hr {
-  border: 0;
-  border-top: 1px solid var(--line);
-  margin: 24px 0 16px;
-}
-.meta { color: var(--lo); font-size: 12px; }
-a { color: var(--accent); text-decoration: none; }
-a:hover { text-decoration: underline; }
-
-/* 功能卡片 */
-.features {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 10px;
-  margin: 16px 0;
-}
-.feature {
-  background: var(--ink2);
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  padding: 12px;
-}
-.feature-icon { font-size: 20px; margin-bottom: 6px; }
-.feature-title {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--hi);
-  margin-bottom: 4px;
-}
-.feature-desc {
-  font-size: 12px;
-  color: var(--lo);
-  line-height: 1.5;
-}
-footer {
-  text-align: center;
-  color: var(--lo);
-  font-size: 12px;
-  margin-top: 32px;
-  padding-top: 16px;
-  border-top: 1px solid var(--line);
-}
+h1{font-size:20px;font-weight:600;margin-bottom:24px;display:flex;align-items:center;gap:10px;}
+h1::before{content:"📢";font-size:18px;}
+h2{font-size:14px;font-weight:600;color:var(--accent);margin:20px 0 10px;
+   display:flex;align-items:center;gap:8px;}
+h2::before{content:"";width:3px;height:14px;background:var(--accent);border-radius:2px;flex-shrink:0;}
+.entry{background:var(--ink1);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:14px;}
+.badge-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;}
+.tag{font-size:11px;padding:2px 8px;border-radius:20px;font-weight:600;}
+.tag-new{background:#1a3a1a;color:var(--mint);}
+.tag-fix{background:#2a2a0a;color:var(--amber);}
+.tag-hot{background:#2a1a1a;color:var(--rose);}
+.tag-vd{background:#1e1a3a;color:var(--vd);}
+p{color:var(--mid);margin:0 0 10px;}
+p:last-child{margin-bottom:0;}
+ul{padding-left:18px;color:var(--mid);}
+li{margin:6px 0;}
+code{background:#1a1e2a;padding:1px 6px;border-radius:4px;
+     font-family:"JetBrains Mono","Fira Code",monospace;font-size:13px;color:var(--accent);}
+.meta{color:var(--lo);font-size:12px;}
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin:16px 0;}
+.feature{background:var(--ink2);border:1px solid var(--line);border-radius:10px;padding:12px;}
+.feature-icon{font-size:20px;margin-bottom:6px;}
+.feature-title{font-size:13px;font-weight:600;color:var(--hi);margin-bottom:4px;}
+.feature-desc{font-size:12px;color:var(--lo);line-height:1.5;}
+footer{text-align:center;color:var(--lo);font-size:12px;margin-top:32px;
+       padding-top:16px;border-top:1px solid var(--line);}
 </style>
 </head>
 <body>
 
 <h1>AI Hub 更新公告</h1>
 
-<!-- ===== ① 版本公告（最前）===== -->
 <div class="entry">
   <div class="badge-row">
-    <span class="tag tag-hot">v1.0.0</span>
-    <span class="tag tag-new">正式版</span>
+    <span class="tag tag-hot">v1.1.0</span>
+    <span class="tag tag-new">安全加固版</span>
   </div>
-  <p>AI Hub 是一款专为 Android 打造的 AI 助手工具。内置完整开发环境，让 AI 能在你手机上真正干活——自动操作 App、读写文件、运行终端命令，同时不干扰你正在玩的游戏。</p>
+  <p>AI Hub 是专为 Android 打造的 AI 助手。内置完整开发环境，让 AI 在你手机上真正干活——自动操作 App、读写文件、运行终端命令，同时不打断你正在玩的游戏。本次更新重点在<strong>安全性</strong>与<strong>交互手感</strong>。</p>
 </div>
 
-<!-- ===== ② 最近更新（紧跟公告）===== -->
 <div class="entry">
   <div class="badge-row">
     <span class="tag tag-new">新增</span>
-    <span class="tag tag-fix">优化</span>
+    <span class="tag tag-fix">修复</span>
   </div>
-  <h2 style="margin-top:0;">最近更新</h2>
+  <h2 style="margin-top:0;">本次更新</h2>
   <ul>
-    <li>✅ 新增公告入口，重要动态第一时间看到</li>
-    <li>✅ 新增 MCP 客户端，支持 STDIO / HTTP 两种协议</li>
-    <li>✅ 新增后台 Agent 保活舱，游戏时 AI 也能在后台运行</li>
-    <li>✅ 新增 VirtualDisplay 能力探测，智能选择最合适的操作方式</li>
-    <li>✅ 修复部分机型 WebView 跨域问题</li>
-    <li>✅ 修复 Release 包签名校验误判</li>
-    <li>✅ 开屏动画改为数学公式曲面 → 坍缩 → 围成图标</li>
+    <li>🔒 <strong>四层安全加固</strong>：反 Root、反模拟器、反抓包、反注入</li>
+    <li>🔙 <strong>系统返回手势</strong>：左右边缘滑返回时，先问「确定退出吗」，不再直接杀掉</li>
+    <li>📘 <strong>内置手册新增第 10 章</strong>：APK 解包 / 改包名 / 回编译 / 签名全流程</li>
+    <li>🛠 修复公告页上半屏划不动（WebView 图层与触摸坐标错位）</li>
+    <li>🛠 公告改为冷启动自动弹出，关掉后当天不再打扰</li>
+    <li>⚡ 网络层默认拒绝系统代理，敏感请求走证书绑定</li>
   </ul>
 </div>
 
-<!-- ===== ③ 快速上手（说明内容提前）===== -->
+<div class="entry">
+  <div class="badge-row">
+    <span class="tag tag-new">安全</span>
+  </div>
+  <h2 style="margin-top:0;">安全加固说明</h2>
+  <p><strong>反 Root</strong>：扫描挂载点与 Magisk / KernelSU / APatch 特征。<strong>只提示不拦截</strong>——本应用依赖 Shizuku，而 Shizuku 常跑在 Root 环境上，误杀等于自废武功。</p>
+  <p><strong>反模拟器</strong>：识别 QEMU / goldfish / ranchu 特征、CPU 架构、传感器数量、电池状态。虚拟机里跑不出口令。</p>
+  <p><strong>反抓包</strong>：移除用户证书信任锚，拒绝伪造证书；强制直连不走系统代理；检测 VPN 与全局代理并记录。</p>
+  <p><strong>反注入</strong>：扫描进程内存映射与特征端口，命中 Frida / Xposed / LSPosed / Substrate 即终止进程。只有这一类是硬拦——因为那不是环境特殊，是进程被接管了。</p>
+  <p class="meta">Zygisk 已明确排除在注入判定之外：它是 Magisk 常规模块，算进来会让所有 Root 用户开不了应用。</p>
+</div>
+
 <div class="entry">
   <div class="badge-row">
     <span class="tag tag-vd">提示</span>
   </div>
   <h2 style="margin-top:0;">快速上手</h2>
-  <p><strong>第一步：</strong>进入设置 → 添加你的 AI 模型提供商（支持 OpenAI / Claude / DeepSeek / 本地模型）</p>
-  <p><strong>第二步：</strong>在对话中直接下达指令，例如：</p>
+  <p><strong>第一步：</strong>设置 → 添加模型提供商（OpenAI / Claude / DeepSeek / 本地模型）</p>
+  <p><strong>第二步：</strong>直接下指令，例如：</p>
   <ul>
-    <li>「帮我下载这个网页到 Documents」</li>
-    <li>「打开微信，找到某人发个消息」</li>
-    <li>「分析这个 CSV 文件并生成图表」</li>
+    <li>「把这个网页保存到 Documents」</li>
+    <li>「打开微信，给某人发条消息」</li>
+    <li>「分析这个 CSV 并画个图」</li>
+    <li>「把这个 APK 的包名改成 com.xxx」</li>
   </ul>
-  <p><strong>第三步：</strong>开启副屏模式，AI 会在后台自动操作，不影响你当前使用</p>
+  <p><strong>第三步：</strong>开启副屏模式，AI 在后台操作，你继续玩你的游戏</p>
 </div>
 
-<!-- ===== ④ 核心功能（往后放）===== -->
 <h2>核心功能</h2>
 <div class="features">
   <div class="feature">
     <div class="feature-icon">🤖</div>
     <div class="feature-title">AI 自动操作</div>
-    <div class="feature-desc">Shizuku 驱动，替你点击屏幕、打开 App、输入文字，解放双手</div>
+    <div class="feature-desc">Shizuku 驱动，替你点击、打开 App、输入文字</div>
   </div>
   <div class="feature">
     <div class="feature-icon">🖥️</div>
     <div class="feature-title">副屏模式</div>
-    <div class="feature-desc">虚拟显示器让 AI 在后台操作，你的游戏/视频不受影响</div>
+    <div class="feature-desc">虚拟显示器让 AI 在后台干活，前台不受影响</div>
   </div>
   <div class="feature">
     <div class="feature-icon">🐚</div>
     <div class="feature-title">内置终端</div>
-    <div class="feature-desc">Alpine Linux 沙箱，Python / Git / Node.js / GCC 开箱即用</div>
+    <div class="feature-desc">Alpine Linux 沙箱，Python / Git / Node / GCC 开箱即用</div>
   </div>
   <div class="feature">
     <div class="feature-icon">📋</div>
-    <div class="feature-title">文件管理</div>
-    <div class="feature-desc">读写手机文件、截图、安装卸载 App，一站式搞定</div>
+    <div class="feature-title">文件与 APK</div>
+    <div class="feature-desc">读写文件、截图、解包改包签名，一站完成</div>
   </div>
   <div class="feature">
     <div class="feature-icon">🌐</div>
     <div class="feature-title">联网搜索</div>
-    <div class="feature-desc">内置搜索引擎，AI 可实时获取最新信息回答问题</div>
+    <div class="feature-desc">内置搜索与网页抓取，实时信息不在话下</div>
   </div>
   <div class="feature">
     <div class="feature-icon">🔌</div>
     <div class="feature-title">MCP 工具链</div>
-    <div class="feature-desc">兼容 Claude Desktop 配置，接入海量第三方工具生态</div>
+    <div class="feature-desc">兼容 MCP 配置，接入第三方工具生态</div>
   </div>
 </div>
 
-<!-- ===== ⑤ 关于（最后）===== -->
 <div class="entry">
   <p>作者：lyc</p>
-  <p class="meta">最后更新：2026-10-20 &nbsp;·&nbsp; 版本 v1.0.0</p>
+  <p class="meta">最后更新：2026-10-21 &nbsp;·&nbsp; 版本 v1.1.0</p>
 </div>
 
 <footer>
